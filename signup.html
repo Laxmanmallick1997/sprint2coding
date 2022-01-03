@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        body{
+            background-color: tomato;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>SIGNUP</h1>
+    <div id="main">
+        <div>Email </div>
+        <input id="email" type="text" placeholder="enter email">
+        <div> password </div>
+        <input id="password" type="password" placeholder="enter password">
+        <div>User name </div>
+        <input id="user" type="text" placeholder="enter user name">
+        <div>mobile </div>
+        <input id="mobile" type="text" placeholder="enter your mobile">
+
+        <a href="signin.html"><button>Sign up</button></a>
+    </div>
+</body>
+</html>
+
+<script>
+    document.querySelector("button").addEventListener("click",signup)
+    var userData=JSON.parse(localStorage.getItem("details"))|| []
+
+    function signup(){
+        var email=document.querySelector("#email").value;
+        var password=document.querySelector("#password").value;
+        var user=document.querySelector("#user").value;
+        var mobile=document.querySelector("#mobile").value;
+
+        var userCredential={
+            emailId:email,
+            pass:password,
+            username:user,
+            mobile:mobile,
+        };
+
+        userData.push(userCredential);
+        localStorage.setItem("details",JSON.stringify(userData))
+    }
+
+</script>

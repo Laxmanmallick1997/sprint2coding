@@ -1,0 +1,11 @@
+body>div{
+ display: grid;
+ grid-template-columns: repeat(4,20%);
+ grid-gap: 50px;
+ justify-content: center;
+ background-color: bisque;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
